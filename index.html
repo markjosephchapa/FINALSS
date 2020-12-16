@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<title>Registration Form</title>
+
+	<script>
+		function validate(){
+  var fname = document.getElementById("fname").value;
+  var mname = document.getElementById("mname").value;
+  var lname = document.getElementById("lname").value;
+  var cont = document.getElementById("cont").value;
+  var email = document.getElementById("email").value;
+  var user = document.getElementById("uname").value;
+  var pass = document.getElementById("pass").value;
+  var cpass = document.getElementById("cpass").value;
+  var error_message = document.getElementById("error_message");
+
+
+  if(fname.length < 5){
+    alert("Enter valid first name");
+    return false;
+  }
+  if(mname.length < 5){
+    alert("Enter valid middle name");
+    return false;
+  }
+  if(lname.length < 5){
+    alert("Enter valid last name");
+    return false;
+  }
+  
+  if(cont.length != 11){
+    alert("Enter valid phone number");
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 5){
+    alert("Enter valid email");
+    return false;
+  }
+  if(user.length < 5){
+    alert("Username must contain at least 5 characters");
+    return false;
+  }
+  if(pass.length < 5){
+    alert("Password must contain at least 5 characters");
+    return false;
+  }
+  if(pass != cpass){
+    alert("Password did not match");
+    return false;
+  }
+  
+  document.write("Sucessfully submitted");
+  			return true;
+				}
+	</script>
+
+	<style>
+		body{
+			background-color: #A2C2E6;
+		}
+
+		label{
+			color: white;
+			font-family: 'Helvetica', sans-serif;
+		}
+
+		.btn{
+			padding: 3px 45px;
+		}
+
+		input[type=text], select {
+			  box-sizing: border-box;
+			  padding: 5px 7px;
+			}
+
+		input[type=email], select {
+			  box-sizing: border-box;
+			  padding: 5px 7px;
+			}
+		input[type=number], select {
+			  box-sizing: border-box;
+			  padding: 5px 7px;
+			}
+		input[type=password], select {
+			  box-sizing: border-box;
+			  padding: 5px 7px;
+			}
+	</style>
+
+
+</head>
+<body>
+
+	<h1 class="text-center mt-3 mb-3" style="color:#3171BA; font-family: 'Helvetica', sans-serif; ">FILL OUT THE FORM BELOW AND CLICK REGISTER</h1>
+
+	<div>
+		<table cellpadding="10" style="margin: 0 auto;">
+			<tr>
+				<td>
+					<label>FIRST NAME:</label>
+				</td>
+
+				<td>
+					<input type="text" name="fname" id="fname">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>MIDDLE NAME:</label>
+				</td>
+
+				<td>
+					<input type="text" name="mname" id="mname">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>LAST NAME:</label>
+				</td>
+
+				<td>
+					<input type="text" name="lname" id="lname">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>CONTACT NUMBER:</label>
+				</td>
+
+				<td>
+					<input type="number" name="cnumber" id="cont">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>EMAIL ADDRESS:</label>
+				</td>
+
+				<td>
+					<input type="email" name="Email" id="email">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>USERNAME:</label>
+				</td>
+
+				<td>
+					<input type="text" name="uname" id="uname">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>PASSWORD</label>
+				</td>
+
+				<td>
+					<input type="password" name="pw" id="pass">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>CONFIRM PASSWORD:</label>
+				</td>
+
+				<td>
+					<input type="password" name="cpw" id="cpass">
+				</td>
+			</tr>
+
+				<td>
+					<center><button style="font-family: 'Helvetica', sans-serif; font-size: 25px; background-color:#e6a4a2;" class="btn btn-lg" type="button" onclick="validate()" >SUBMIT</button></center>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
